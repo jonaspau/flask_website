@@ -18,12 +18,12 @@
         <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed varius leo. Ut sodales neque non libero faucibus, non rhoncus diam cursus. Curabitur convallis mi sed efficitur auctor. Aenean quis convallis ipsum. Duis eleifend consectetur ante, sit amet pulvinar nulla feugiat eu. Nulla cursus dictum fringilla. Nunc finibus, odio eget efficitur facilisis, orci enim malesuada diam, ut vulputate sapien lacus a orci. Suspendisse tempor risus vitae nisl fringilla, ut porta felis sollicitudin. Aenean facilisis et dui et aliquet. Curabitur auctor orci ligula, nec porttitor est fermentum nec. Mauris scelerisque neque ac felis condimentum, ac iaculis ipsum feugiat. Quisque nulla felis, consequat ut justo at, fermentum ultrices nisi. Maecenas lacinia vel lacus ac semper. Proin quis neque non dui posuere eleifend. Donec sollicitudin mi sed dui congue ultrices. Vivamus eleifend ullamcorper lorem, eget placerat odio. </p>
         <p>hendrerit scelerisque velit at mollis. Fusce quis enim ut lectus ultricies facilisis. Nunc vitae auctor mauris. Donec mattis cursus justo, aliquam tempor magna vulputate sed. Ut ac lectus sollicitudin ipsum dapibus faucibus sit amet sed ante. Vestibulum lorem neque, sagittis nec mollis eget, tempus eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla feugiat congue tortor nec pellentesque. Curabitur velit nibh, pretium sed velit nec, finibus malesuada lectus. Sed sed justo nisi. Phasellus nisi massa, iaculis in gravida ut, laoreet at ex. Nulla justo ante, consequat vitae lacus ac, malesuada consequat neque. Curabitur quis magna erat. Vivamus non fringilla turpis. Curabitur vel laoreet est.</p>
         <h2 class="text-center mt-2 mb-4">Job openings</h2>
-        TODO - Add job openings:
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
+
+        <!-- Adds the job openings from the job array in a structured table -->
+        {% for job in jobs  %}
+            {%  include 'jobitem.html'  %}
+        {%  endfor  %}
+
         <div class="contact text-center"><button type="button" class="btn btn-primary btn-lg">Contact Us</button></div>
         <div class="footer mt-4 text-center">Made by Jonas 2024</div>
     </div>
