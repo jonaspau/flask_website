@@ -1,0 +1,31 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+*.env/
+
+# IDE files
+.idea/
+.vscode/
+
+# OS or distribution-specific files
+.DS_Store
+Thumbs.db
+
+# Compiled Python files
+*.pyc
+
+# Compiled C extensions
+*.so
+
+# Python egg metadata
+*.egg-info/
+dist/
+
+# Pipenv
+Pipfile.lock
