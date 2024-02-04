@@ -1,31 +1,40 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="shortcut icon" href="/static/favicons/favicon.ico">
-    <link rel="stylesheet" href="/static/styles.css">
-    <title>Acme Corp</title>
-</head>
-<body>
-    <div class="container">
-        <div>
-            <h1 class="text-center mt-4">Acme Corp Careers</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="shortcut icon" href="/static/favicons/favicon.ico">
+        <link rel="stylesheet" href="/static/styles.css">
+        <title>Acme Corp</title>
+    </head>
+    <body>
+        <div class="container">
+
+            <!-- navbar from separate html file-->
+            {%  include 'navbar.html'  %}
+
+            <div>
+                <h1 class="text-center mt-5 display-1">Acme Corp Careers</h1>
+            </div>
+            <img class="img-fluid" id="banner"src="/static/grumantbyen.jpg" alt="landscape photo of grumantbyen">
+
+            <h2 class="text-center mt-2 mb-4 display-3">About</h2>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed varius leo. Ut sodales neque non libero faucibus, non rhoncus diam cursus. Curabitur convallis mi sed efficitur auctor. Aenean quis convallis ipsum.</p>
+            <p>hendrerit scelerisque velit at mollis. Fusce quis enim ut lectus ultricies facilisis. Nunc vitae auctor mauris. Donec mattis cursus justo, aliquam tempor magna vulputate sed. Ut ac lectus sollicitudin ipsum dapibus faucibus sit amet sed ante.</p>
+            <p>Vestibulum lorem neque, sagittis nec mollis eget, tempus eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla feugiat congue tortor nec pellentesque. Curabitur velit nibh, pretium sed velit nec, finibus malesuada lectus. Sed sed justo nisi. Phasellus nisi massa, iaculis in gravida ut, laoreet at ex. Nulla justo ante, consequat vitae lacus ac, malesuada consequat neque. Curabitur quis magna erat. Vivamus non fringilla turpis. Curabitur vel laoreet est.</p>
+            
+            <h2 class="text-center mt-2 mb-4 display-3">Open Positions</h2>
+
+            <!-- Adds the job openings from the job array in a structured table -->
+            {% for job in jobs  %}
+                {%  include 'jobitem.html'  %}
+            {%  endfor  %}
+
+            <div class="contact text-center"><a class="btn btn-primary btn-lg" href=" mailto:hello@acmecorp.com">Contact Us</a></div>
         </div>
-        <img class="img-fluid" id="banner"src="/static/grumantbyen.jpg" alt="landscape photo of grumantbyen">
 
-        <h2 class="text-center mt-2 mb-4">About</h2>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed varius leo. Ut sodales neque non libero faucibus, non rhoncus diam cursus. Curabitur convallis mi sed efficitur auctor. Aenean quis convallis ipsum. Duis eleifend consectetur ante, sit amet pulvinar nulla feugiat eu. Nulla cursus dictum fringilla. Nunc finibus, odio eget efficitur facilisis, orci enim malesuada diam, ut vulputate sapien lacus a orci. Suspendisse tempor risus vitae nisl fringilla, ut porta felis sollicitudin. Aenean facilisis et dui et aliquet. Curabitur auctor orci ligula, nec porttitor est fermentum nec. Mauris scelerisque neque ac felis condimentum, ac iaculis ipsum feugiat. Quisque nulla felis, consequat ut justo at, fermentum ultrices nisi. Maecenas lacinia vel lacus ac semper. Proin quis neque non dui posuere eleifend. Donec sollicitudin mi sed dui congue ultrices. Vivamus eleifend ullamcorper lorem, eget placerat odio. </p>
-        <p>hendrerit scelerisque velit at mollis. Fusce quis enim ut lectus ultricies facilisis. Nunc vitae auctor mauris. Donec mattis cursus justo, aliquam tempor magna vulputate sed. Ut ac lectus sollicitudin ipsum dapibus faucibus sit amet sed ante. Vestibulum lorem neque, sagittis nec mollis eget, tempus eget quam. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla feugiat congue tortor nec pellentesque. Curabitur velit nibh, pretium sed velit nec, finibus malesuada lectus. Sed sed justo nisi. Phasellus nisi massa, iaculis in gravida ut, laoreet at ex. Nulla justo ante, consequat vitae lacus ac, malesuada consequat neque. Curabitur quis magna erat. Vivamus non fringilla turpis. Curabitur vel laoreet est.</p>
-        <h2 class="text-center mt-2 mb-4">Job openings</h2>
+        {%  include 'footer.html'  %}
 
-        <!-- Adds the job openings from the job array in a structured table -->
-        {% for job in jobs  %}
-            {%  include 'jobitem.html'  %}
-        {%  endfor  %}
-
-        <div class="contact text-center"><button type="button" class="btn btn-primary btn-lg">Contact Us</button></div>
-        <div class="footer mt-4 text-center">Made by Jonas 2024</div>
-    </div>
-</body>
+    </body>
 </html>  
