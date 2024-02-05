@@ -1,2 +1,6 @@
 Flask
 Gunicorn
+sqlalchemy
+pymysql
+python-dotenv
+os

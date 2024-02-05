@@ -26,3 +26,15 @@ with engine.connect() as conn:
     result_dicts = []
     for row in result.all():
         result_dicts.append(dict(row._mapping))
+
+
+def load_jobs_from_db():
+    with engine.connect() as conn:
+        result = conn.execute(text("select * from jobs"))
+
+    jobs = []
+    # reads through the sglalchemy output and returns a dictionary with each job as a row
+    for row in result.all():
+        jobs.append(dict(row._mapping))
+
+    return jobs
