@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%  include 'head.html'  %}
+        <title>{{ job.title }} - Acme Corp</title>
+    </head>
+    <body>
+        <div class="container">
+            {%  include 'navbar.html'  %}
+            {%  include 'header.html'  %}
+
+            <div class="job-listing">
+                <h2 class="mt-4 mb-2">Title:</h2>
+                <p class ="lead">{{ job.title  }}</p>
+                <h3 class="mt-4 mb-2">Location:</h3>
+                <p>{{ job.location  }}</p>
+                <h3 class="mt-4 mb-2">Salary:</h3>
+                <p>{{ job.salary  }}{{  job.currency  }}</p>
+                <h3 class="mt-4 mb-2">Responsibilities</h3>
+                <ul>
+                    {%  for line in job.responsibilities.split('\n')  %}
+                        <li>{{  line  }}</li>
+                    {%  endfor  %}
+                </ul>
+                <h3 class="mt-4 mb-2">Requirements</h3>
+                    {%  for line in job.requirements.split('\n')  %}
+                        <li>{{  line  }}</li>
+                    {%  endfor  %}
+            </div>
+
+        {%  include 'footer.html'  %}
+    </body>
+</html>  
