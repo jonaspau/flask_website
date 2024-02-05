@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {%  include 'head.html'  %}
+        <title>Application submitted</title>
+    </head>
+    <body>
+        <div class="container">
+            {%  include 'navbar.html'  %}
+            {%  include 'header.html'  %}
+            
+            <h2>Application submitted</h2>
+            <p>Hi {{  application['full_name']  }}!</p><br>
+            <p>Your application for the position as {{  job['title']  }} have been submited.</p>
+            <p>We'll send you a verification email on {{  application['email']  }}</p><br>
+            <p>We appreciate your application and will contact you when the application deadline has ended.</p>
+
+            <h3>Application details</h3>
+            <div class="mb-2">
+                <p class="verification_details">Name:</p>
+                <p>{{  application['full_name']  }}</p>
+            </div>
+            <div class="mb-2">
+                <p class="verification_details">Email:</p>
+                <p>{{  application['email']  }}</p>
+            </div>
+            <div class="mb-2">
+                <p class="verification_details">Linkedin URL:</p>
+                <p>{{  application['linkedin_url']  }}</p>
+            </div>
+            <div class="mb-2">
+                <p class="verification_details">Resume URL:</p>
+                <p>{{  application['resume_url']  }}</p>
+            </div>
+            <div class="mb-2">
+                <p class="verification_details">Education:</p>
+                    {%  for line in application.education.split('\n')  %}
+                    <p>{{  line  }}</p>
+                    {%  endfor  %}
+            </div>
+            <div class="mb-2">
+                <p class="verification_details">Experience:</p>
+                    {%  for line in application.education.split('\n')  %}
+                        <p>{{  line  }}</p>
+                    {%  endfor  %}
+            </div>
+
+        {%  include 'footer.html'  %}
+        </div>
+    </body>
+</html>  

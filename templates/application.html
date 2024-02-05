@@ -1,0 +1,28 @@
+<h2 class="mt-4 mb-2">Application form:</h2>
+<form action="/job/{{  job['id']  }}/apply" method="post">
+    <div class="mb-2">
+        <label for="full_name">Full name:</label><br>
+        <input type="text" name="full_name" id="full_name" placeholder="John Longyear">
+    </div>
+    <div class="mb-2">
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email" placeholder="john@longyear.com">
+    </div>
+    <div class="mb-2">
+        <label for="linkedin_url">Linkedin URL</label><br>
+        <input type="text" name="linkedin_url" id="linkedin_url" placeholder="linkedin.com/johnlongyear">
+    </div>
+    <div class="mb-2">
+        <label for="resume_url">Resume URL</label><br>
+        <input type="text" name="resume_url" id="resume_url" placeholder="if other than linkedin">
+    </div>
+    <div class="mb-2">
+        <label for="education">Education</label><br>
+        <textarea name="education" id="education" placeholder="Please list your education"></textarea>
+    </div>
+    <div class="mb-2">
+        <label for="experience">Experience</label><br>
+        <textarea name="experience" id="experience" placeholder="Please list your relevant experience"></textarea>
+    </div>
+    <input class="mb-2" type="submit">
+</form>

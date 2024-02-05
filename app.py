@@ -18,8 +18,17 @@ def show_job_listing(id):
     return render_template('job_listing.html', job = job)
 
 
-
-
+@app.route('/job/<id>/apply', methods = ['POST', 'GET'])
+def apply_for_position(id):
+    data = request.form
+    if not data:
+        return "Not Found", 404
+    job = load_job_from_db(id)
+    # show thank you
+    return render_template('application_submitted.html', application=data, job=job)
+    # store in db
+    # send an email
+    
 
 # Show the jobs in JSON
 @app.route('/api/jobs')
